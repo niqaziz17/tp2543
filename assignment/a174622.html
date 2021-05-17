@@ -1,0 +1,94 @@
+<!--
+Matric Number: A174622
+Name: Putera Niq Aziz Bin Hoslam
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Biodata</title>
+</head>
+<body>
+<h1>Biodata Form</h1>
+
+<hr>
+<form method="post" enctype="multipart/form-data">
+  <table border="1" cellpadding="10">
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" name="name" placeholder="Enter Your Name" pattern="[A-Z ]+" autofocus=""></td>
+    </tr>
+    <tr>
+      <td>Age:</td>
+      <td><input type="number" name="age" min="17" max="100" step="1"></td>
+    </tr>
+    <tr>
+      <td>Sex:</td>
+      <td><input type="radio" name="sex" value="male" >Male<input type="radio" name="sex" value="female">Female</td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td><textarea name="address" cols="50" rows="5" placeholder="Insert your address" >Putrajaya</textarea></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="email" name="email" pattern="[a-zA-Z0-9-]+@gmail.com" placeholder="Insert your Email"></td>
+    </tr>
+    <tr>
+      <td>Date of Birth</td>
+      <td><input type="date" name="dob" placeholder="dd/mm/yyyy"></td>
+    </tr>
+    <tr>
+      <td>Height</td>
+      <td><input type="range" name="height" id="heightId" min = "100" max = "200" value = "150" disabled="" oninput="outputId.value = heightId.value"><output id="outputId">150</output>cm 
+    </tr>
+    <tr>
+      <td>Tel</td>
+      <td><input type="tel" name="phone" placeholder="+60##-#######" pattern="^(\+601)[0-46-9]-[0-9]{7,8}$"></td>
+    </tr>
+    <tr>
+      <td>My Favourite Colour</td>
+      <td><input type="color" name="color"></td>
+    </tr>
+    <tr>
+      <td>Fb/Tw/IG</td>
+      <td><input type="url" name="fbtwig"></td>
+    </tr>
+    <tr>
+      <td>My Face Photo</td>
+      <td><input type="file" name="photo"></td>
+    </tr>
+    <tr>
+      <td>My University</td>
+      <td>
+      <select size="7" name="university">
+      <option value="" selected>Select</option>
+
+      <option value="UKM">Universiti Kebangsaan Malaysia</option>
+      
+      <option value="UM">Universiti Malaya</option>
+      <option value="UPM">Universiti Putra Malaysia </option>
+      <option value="UMS">Universiti Malaysia Sabah</option>
+      <option value="UPSI">Universiti Pendidikan Sultan Idris</option>
+      <option value="USIM">Universiti Sains Islam Malaysia</option>
+      <option value="UiTM">Universiti Teknologi MARA</option>
+      <option value="UMT">Universiti Malaysia Terengganu</option>
+      <option value="UTHM">Universiti Tun Hussein Onn</option>
+      <option value="UTeM">Universiti Teknikal Malaysia Melaka</option>
+      <option value="UMP">Universiti Malaysia Pahang</option>
+      <option value="UniMAP">Universiti Malaysia Perlis</option>
+      <option value="UniSZA">Universiti Sultan Zainal Abidin</option>
+      <option value="UMK">Universiti Malaysia Kelantan</option>
+      <option value="UPNM">Universiti Pertahanan Nasional Malaysia</option>
+      </select>
+    </td>
+    </tr>
+  </table>
+<hr>
+<input type="hidden" name="matricnum" value="a174622">
+<input type="submit" name="biodata_form" value="OK"  
+formaction="http://lrgs.ftsm.ukm.my/users/a123456/week3lab/validate_biodata.php">
+<input type="reset">
+</form>
+ 
+</body>
+</html>
