@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+<!-- or the reference on CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+<body>
+
+
+
+<div id="card-slider" class="splide">
+    <div class="splide__track">
+        <ul class="splide__list">
+            <li class="splide__slide">
+                <img src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/5/2016/01/watch-hero-blue-lagoon-the-awakening-mobile-1080x1080.jpg?w=548">
+                <h4>Heading 01</h4>
+                <div>
+                    Description 01
+                </div>
+            </li>
+            <li class="splide__slide">
+                <img src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/5/2016/01/watch-hero-blue-lagoon-the-awakening-mobile-1080x1080.jpg?w=548">
+                <h4>Heading 02</h4>
+                <div>
+                    Description 02
+                </div>
+            </li>
+             <li class="splide__slide">
+                <img src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/5/2016/01/watch-hero-blue-lagoon-the-awakening-mobile-1080x1080.jpg?w=548">
+                <h4>Heading 01</h4>
+                <div>
+                    Description 01
+                </div>
+            </li>
+             <li class="splide__slide">
+                <img src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/5/2016/01/watch-hero-blue-lagoon-the-awakening-mobile-1080x1080.jpg?w=548">
+                <h4>Heading 01</h4>
+                <div>
+                    Description 01
+                </div>
+            </li>
+             <li class="splide__slide">
+                <img src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/5/2016/01/watch-hero-blue-lagoon-the-awakening-mobile-1080x1080.jpg?w=548">
+                <h4>Heading 01</h4>
+                <div>
+                    Description 01
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+document.addEventListener( 'DOMContentLoaded', function () {
+    new Splide( '#card-slider', {
+        perPage    : 2,
+        breakpoints: {
+            600: {
+                perPage: 1,
+            }
+        }
+    } ).mount();
+} );
+</script>
+
+</body>
+</html>

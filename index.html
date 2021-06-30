@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet"  href="main_css.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
@@ -22,26 +23,42 @@
   </style>
 </head>
 <body>
-  
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+  </div>
+
+  <script>
+
+    function next(){
+      $(".loader-wrapper").fadeOut("slow");
+      var x = document.getElementsByTagName("BODY")[0];
+      x.style.overflow="auto";
+    }
+
+    $(window).on("load",function(){
+      setTimeout(next, 1500);
+    });
+  </script>
 <!-- header -->
-<div class="container-fluid bg-success text-center">
-  <h2 class="margin">TP2543 Web Programming Deliverables</h2>
-  <img src="mukahensemlagi.jpg" width="20%" height="100%" class="img-responsive img-circle margin" style="display:inline">
-  <h3>A174622 - Putera Niq Aziz Bin Hoslam</h3>
+<div class="container-fluid bg-success text-center" style=" background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364) ">
+  <h2 class="margin "><font color="White">  TP2543 Web Programming Deliverables</font></h2>
+  <img src="mukahensembabi.jpg" width="200px" height="200px" class="img-responsive img-circle margin" style="display:inline">
+  <h3><font color="White"> A174622 - Putera Niq Aziz Bin Hoslam</font></h3>
 </div>
   
 <!-- Lab -->
-<div class="container-fluid text-center">
-  <h2 class="margin">Laboratory</h2>
+<div class="container-fluid text-center"style=" background: linear-gradient(to top, #536976, #292e49);" >
+  <h2 class="margin"><font color="White"> Laboratory</font></h2>
     
     <div class="row">
       <div class="col-sm-4">
         <div class="thumbnail">
           <div class="caption">
             <h3>Week2Lab: Basic HTML</h3>
+            <img src="images/html.png" width="100px" height="100px">
             <p>To create a HTML page about myself.</p>
             <p><a href="week2_lab/index.html" class="btn btn-primary">
-            <span class="glyphicon glyphicon-zoom-in"></span> Open</a></p>
+            <span class="glyphicon glyphicon-ok-circle"></span> Open</a></p>
           </div>
         </div>
       </div>
@@ -49,9 +66,10 @@
         <div class="thumbnail">
           <div class="caption">
             <h3>Week3Lab: HTML Form</h3>
+             <img src="images/html.png" width="100px" height="100px">
             <p>To create ...</p>
             <p><a href="week3_lab/" class="btn btn-primary">
-            <span class="glyphicon glyphicon-zoom-in"></span> Open</a></p>
+            <span class="glyphicon glyphicon-ok-circle"></span> Open</a></p>
           </div>
         </div>
       </div>
@@ -59,9 +77,10 @@
         <div class="thumbnail">
           <div class="caption">
             <h3>Week4Lab: Basic PHP</h3>
+             <img src="images/php.png" width="100px" height="100px">
             <p>Describe the assignment here.</p>
             <p><a href="week4_lab" class="btn btn-primary">
-            <span class="glyphicon glyphicon-zoom-in"></span> Open</a></p>
+            <span class="glyphicon glyphicon-ok-circle"></span> Open</a></p>
           </div>
         </div>
       </div>
@@ -72,9 +91,10 @@
         <div class="thumbnail">
           <div class="caption">
             <h3>Week5Lab: PHP and MySQL</h3>
+             <img src="images/phpmysql.jpg" width="100px" height="100px">
             <p>Describe the assignment here.</p>
             <p><a href="week5_lab" class="btn btn-primary">
-            <span class="glyphicon glyphicon-zoom-in"></span> Open</a></p>
+            <span class="glyphicon glyphicon-ok-circle"></span> Open</a></p>
           </div>
         </div>
       </div>
@@ -82,18 +102,20 @@
         <div class="thumbnail">
           <div class="caption">
             <h3>Week6Lab: Adv PHP and Session</h3>
+            <img src="images/php.png" width="100px" height="100px">
             <p>Describe the assignment here.</p>
-            <p><a href="#" class="btn btn-primary">
-            <span class="glyphicon glyphicon-zoom-in"></span> Open</a></p>
+            <p><a href="week6_lab" class="btn btn-primary">
+            <span class="glyphicon glyphicon-ok-circle"></span> Open</a></p>
           </div>
         </div>
       </div><div class="col-sm-4">
         <div class="thumbnail">
           <div class="caption">
             <h3>Week7Lab: Codeigniter Framework</h3>
+            <img src="images/codeigniter.png" width="100px" height="100px">
             <p>Describe the assignment here.</p>
-            <p><a href="#" class="btn btn-primary">
-            <span class="glyphicon glyphicon-zoom-in"></span> Open</a></p>
+            <p><a href="week7_lab/myguestbook/" class="btn btn-primary">
+            <span class="glyphicon glyphicon-ok-circle"></span> Open</a></p>
           </div>
         </div>
       </div>
@@ -104,9 +126,10 @@
         <div class="thumbnail">
           <div class="caption">
             <h3>Week9Lab: CSS</h3>
+            <img src="images/css.png" width="100px" height="100px">
             <p>Describe the assignment here.</p>
-            <p><a href="#" class="btn btn-primary">
-            <span class="glyphicon glyphicon-zoom-in"></span> Open</a></p>
+            <p><a href="week9lab" class="btn btn-primary">
+            <span class="glyphicon glyphicon-ok-circle"></span> Open</a></p>
           </div>
         </div>
       </div>
@@ -115,9 +138,10 @@
         <div class="thumbnail">
           <div class="caption">
             <h3>Week10Lab: Bootstrap</h3>
+            <img src="images/bootstrap.png" width="100px" height="100px">
             <p>Describe the assignment here.</p>
-            <p><a href="#" class="btn btn-primary">
-            <span class="glyphicon glyphicon-zoom-in"></span> Open</a></p>
+            <p><a href="week10_lab/index.html" class="btn btn-primary">
+            <span class="glyphicon glyphicon-ok-circle"></span> Open</a></p>
           </div>
         </div>
       </div>
@@ -125,8 +149,9 @@
         <div class="thumbnail">
           <div class="caption">
             <h3>Week11Lab: JavaScript</h3>
+            <img src="images/javascript.png" width="100px" height="100px">
             <p>Describe the assignment here.</p>
-            <p><a href="#" class="btn btn-primary">
+            <p><a href="javascript/index.html" class="btn btn-primary">
             <span class="glyphicon glyphicon-zoom-in"></span> Open</a></p>
           </div>
         </div>
@@ -138,8 +163,9 @@
         <div class="thumbnail">
           <div class="caption">
             <h3>Week13Lab: JQuery</h3>
+            <img src="images/jquery.png" width="100px" height="100px">
             <p>Describe the assignment here.</p>
-            <p><a href="#" class="btn btn-primary">
+            <p><a href="week12lab/index.html" class="btn btn-primary">
             <span class="glyphicon glyphicon-zoom-in"></span> Open</a></p>
           </div>
         </div>
@@ -148,6 +174,7 @@
         <div class="thumbnail">
           <div class="caption">
             <h3>Week14Lab: Ajax</h3>
+            <img src="images/ajax.png" width="100px" height="100px">
             <p>Describe the assignment here.</p>
             <p><a href="#" class="btn btn-primary">
             <span class="glyphicon glyphicon-zoom-in"></span> Open</a></p>
@@ -158,16 +185,16 @@
 </div>
   
 <!-- Assignment -->
-<div class="container-fluid bg-warning text-center">
-  <h2 class="margin">Assignment</h2>
+<div class="container-fluid bg-warning text-center" style="background: linear-gradient(to bottom, #536976, #292e49);">
+  <h2 class="margin"><font color="White">Assignment</font></h2>
     
     <!-- Assignment#1 -->
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h3>Assignment #1</h3>
-        <p>My task is to create a...</p>
+        <h3><font color="White"> Assignment #1</font></h3>
+        <p><font color="White"> My task is to create a...</font></p>
         <a href="assignment/a174622.html" class="btn btn-default">
-          <span class="glyphicon glyphicon-zoom-in"></span> View
+          <span class="glyphicon glyphicon-ok-circle"></span> View
         </a>
       </div>
     </div>
@@ -175,10 +202,10 @@
     <!-- Assignment#2 -->
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h3>Assignment #2</h3>
-        <p>Describe the assignment here.</p>
+        <h3><font color="White"> Assignment #2</font></h3>
+        <p><font color="White">Describe the assignment here.</font></p>
         <a href="assignment2" class="btn btn-default">
-          <span class="glyphicon glyphicon-zoom-in"></span> View
+          <span class="glyphicon glyphicon-ok-circle"></span> View
         </a>
       </div>
     </div>
@@ -186,31 +213,31 @@
 </div>
   
 <!-- Project -->
-<div class="container-fluid text-center">  
-  <h2 class="margin">Project</h2>
-  <p class="margin">My project to develop a web-based back office system for a company that sells ???. Describe your project here.</p>
+<div class="container-fluid text-center" style= " background: linear-gradient(to bottom, #603813, #b29f94);">  
+  <h2 class="margin"><font color="White">Project</font></h2>
+  <p class="margin"><font color="White"> My project to develop a web-based back office system for a company that sells ???. Describe your project here.</font></p>
   <div class="row">
     <div class="col-sm-3">
-      <p>Project Task #1 - HTML</p>
+      <p style="color: white ">Project Task #1 - HTML</p>
       <a href="myPT1/index.php" class="btn btn-default">
-        <span class="glyphicon glyphicon-zoom-in"></span> Open
+        <span class="glyphicon glyphicon-ok-circle"></span> Open
       </a>
     </div>
     <div class="col-sm-3">
-      <p>Project Task #2 - PHP and Database</p>
+      <p style="color: white">Project Task #2 - PHP and Database</p>
       <a href="myPT2" class="btn btn-default">
-        <span class="glyphicon glyphicon-zoom-in"></span> Open
+        <span class="glyphicon glyphicon-ok-circle"></span> Open
       </a>
     </div>
     <div class="col-sm-3">
-      <p>Project Task #3 - JavaScript and Bootstrap</p>
-      <a href="#" class="btn btn-default">
-        <span class="glyphicon glyphicon-zoom-in"></span> Open
+      <p style="color: white">Project Task #3 - JavaScript and Bootstrap</p>
+      <a href="myPT3" class="btn btn-default">
+        <span class="glyphicon glyphicon-ok-circle"></span> Open
       </a>
     </div>
     <div class="col-sm-3">
-      <p>Project Task - Final</p>
-      <a href="#" class="btn btn-default">
+      <p style="color: white">Project Task - Final</p>
+      <a href="myPT4/login.php" class="btn btn-default">
         <span class="glyphicon glyphicon-zoom-in"></span> Open
       </a>
     </div>
@@ -219,7 +246,7 @@
   
 <!-- Footer -->
 <footer class="container-fluid bg-primary text-center">
-  <p>Copyright � Your Website 2018</p>
+  <p>Copyright � Your Website 2021</p>
 </footer>
   
 </body>

@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+}
+
+h1 {
+  position: relative;
+  color: #Fff;
+  font-size: 3em;
+  line-height: 9vw;
+  color: #0e3742;
+  text-align: center;
+  width: 100%;
+ -webkit-box-reflect: below 1px linear-gradient(transparent,#0004);
+  line-height: 0.70em;
+  outline: none;
+  animation: animateee 5s infinite;
+    
+
+  }
+@keyframes animateee{
+    0%, 18%, 20%,50.1% ,60%,65.1%,80%,90.1%,92%{
+        color: #0e3742;
+        text-shadow: none;
+    }
+     18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+        color: #fff;
+        text-shadow: 0 0 10px #03bcf4,0 0 20px #03bcf4,0 0 40px #03bcf4,0 0 80px #03bcf4,0 0 160px #03bcf4;
+        
+    }
+}
+
+
+body
+{
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(to bottom, #000000, #434343);
+}
+
+
+.btn-one
+{
+    height: 70px;
+    width: 300px;
+    border-radius: 0px; 
+    position: absolute;
+    top: 130%;
+    left: 15%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #fff;
+    font-size: 34px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(45deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    background-size: 400%;
+    cursor: pointer;
+
+}
+.btn-two{
+    height: 110px;
+    width: 300px;
+    border-radius: 0px; 
+    position: absolute;
+    top: 140%;
+    right: -30%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #fff;
+    font-size: 34px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(45deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    background-size: 400%;
+    cursor: pointer;
+}
+
+a:hover
+{
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        background-position: 0%;
+    }
+    100%
+    {
+        background-position: 400%;
+    }
+}
+
+a:before
+{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    bottom: -5px;
+    right: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 1s;
+}
+
+a:hover:before
+{
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+}
