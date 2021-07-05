@@ -13,7 +13,7 @@ include_once 'customer_crud.php';
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body style="background: rgba(121,126,246,1.5);">
+<body style="background:#0d1137;">
    <?php include_once 'nav_bar.php'; ?>
  <div class="container-fluid">
    <div class="row">

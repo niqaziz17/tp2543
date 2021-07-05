@@ -9,7 +9,7 @@ if (isset($_POST['userid'],$_POST['password'])){
 	$Password=$_POST['password'];
 
 	if (empty($UserID)||empty($Password)) {
-		$_SESSION['error']='Why Empty?';
+		$_SESSION['error']='Please Enter Email and Password';
 	}
 	else{
 		$stmt=$db->prepare("SELECT * FROM tbl_staff_a174622_pt2 WHERE (FLD_STAFF_ID = :id OR FLD_STAFF_EMAIL =:id) LIMIT 1");
@@ -29,15 +29,15 @@ if (isset($_POST['userid'],$_POST['password'])){
 				exit();
 			}
 			else{
-				$_SESSION['error'] = 'Invalid login credentials. Please try again.';
+				$_SESSION['error'] = 'Your email or password is wrong. Please try again';
 			}
 		}
-	
+
 
 		else{
-		$_SESSION['error'] = 'Account does not exist.';
+			$_SESSION['error'] = 'Account does not exist.';
+		}
 	}
-}
 
 	header("LOCATION: " . $_SERVER['REQUEST_URI']);
 	exit();
@@ -79,20 +79,36 @@ if (isset($_POST['userid'],$_POST['password'])){
 							<input type="password" placeholder="Password" name="password">
 						</div>
 
-					<?php
-					if (isset($_SESSION['error'])) {
-						echo ($_SESSION['error']);
-						unset($_SESSION['error']);
-					}
-					?>
+						<?php
+						if (isset($_SESSION['error'])) {
+							echo ($_SESSION['error']);
+							unset($_SESSION['error']);
+						}
+						?>
 
-					<div class="inputBox">
-						<input type="submit" value="Login">
-					</div>
+						<div class="inputBox">
+							<input type="submit" value="Login">
+						</div>
 
-				</form>
+						<div style="text-align: center; color: white;">Demo admin
+							<div class="well">
+								Email:admin@gmail.com   
+
+							</div>
+							<div>Password:2222</div>
+						</div>
+						<br>
+						<div style="text-align: center; color: white;">Demo Staff
+							<div class="well">
+								Email:staff@gmail.com   
+
+							</div>
+							<div>Password:1234</div>
+						</div>
+
+					</form>
+				</div>
 			</div>
-		</div>
-	</section>
-</body>
-</html>
+		</section>
+	</body>
+	</html>

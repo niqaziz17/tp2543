@@ -1,3 +1,7 @@
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/themes/splide-sea-green.min.css">
+
 <?php
 
 include_once 'database.php';
@@ -18,131 +22,35 @@ try {
     $input_data = explode(" ", $_POST['inputsearch']);
 
     ?>
-      <center>
-        <div class="row" style="display: inline-block; overflow: hidden;">
-        <h2 class="mb-4 p-3 bg-secondary text-white" style="color: black;float: left;">Result for : </h2>
-          <h2 style="color: #black;float: right;"> 
-        <?php
-        for ($index = 0; $index < count($input_data); $index++) {
-          echo $input_data[$index] . "";
-        }
-        ?>
-          </h2>
+    <center>
+      <div class="row" style="display: inline-block; overflow: hidden;">
+        <h2 class="mb-4 p-3 bg-secondary text-white" style="color: white;float: left;">Result for : </h2>
+        <h2 style="color: white;float: right;"> 
+          <?php
+          for ($index = 0; $index < count($input_data); $index++) {
+            echo $input_data[$index] . " ";
+          }
+          ?>
+        </h2>
         
       </div>
-      </center>
-      
-    <?php
+    </center>
+    <div id="card-slider" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <?php
 
-    try {
+          try {
 
-      if (count($input_data) >= 1) {
+            if (count($input_data) >= 1) {
 
-        ?>
-        <div class="thumbnail" style="background-color:white;">
-          <div>
-            <table class="table table-striped">
-              <thead style="background-color: rgba(121,126,246,1.5)";>
-                <tr class="small" style="text-align: center;">
-                  <th scope="col" style="width: 10%; text-align: center;">Product ID</th>
-                  <th scope="col" style="width: 16%; text-align: center;">Name</th>
-                  <th scope="col" style="width: 6%; text-align: center;">Price</th>
-                  <th scope="col" style="width: 10%; text-align: center;">Brand</th>
-                  <th scope="col" style="width: 10%; text-align: center;">Type</th>
-                  <th scope="col" style="width: 20%;text-align: center; ">Colour</th>
-                  <th scope="col" style="width: 6%; text-align: center;">Warranty</th>
-                  <th scope="col" style="width: 6%; text-align: center;">Quantity</th>
-                  <!-- <th scope="col" style="width: 6%;">Stock</th> -->
-                </tr>
-              </thead>
-              <tbody>
-
-                <?php
-                for ($index = 0; $index < count($input_data); $index-=-1) {
-
-                  $stmt = $conn->prepare("SELECT * FROM  tbl_products_a174622_pt2 WHERE FLD_PRODUCT_NAME LIKE :first_string OR FLD_PRICE LIKE :first_string OR FLD_TYPE LIKE :first_string");
-
-                  $stmt->bindParam(':first_string', $first_string, PDO::PARAM_STR);
-
-                  $first_string = $input_data[$index];
-                  $first_string = "%$first_string%";
-
-                  $stmt->execute();
-                  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                  foreach ($result as $readrow) {
-                    if (empty($dataArray)) {
-
-                      $dataArray[$count] = $readrow['FLD_PRODUCT_ID'];
-                      $count++;
-                      ?>
-                      <tr class="small">
-                        <td><?php echo $readrow['FLD_PRODUCT_ID']; ?></td>
-                        <td><?php echo $readrow['FLD_PRODUCT_NAME']; ?></td>
-                        <td><?php echo $readrow['FLD_PRICE']; ?></td>
-                        <td><?php echo $readrow['FLD_BRAND']; ?></td>
-                        <td><?php echo $readrow['FLD_TYPE']; ?></td>
-                        <td><?php echo $readrow['FLD_COLOUR']; ?></td>
-                         <td><?php echo $readrow['FLD_WARRANTY']; ?></td>
-                        <td><?php echo $readrow['FLD_QUANTITY']; ?></td>
-                        <!-- <td><?php //echo $readrow['fld_product_quantity']; ?></td> -->
-                      </tr>
-
-                      <?php
-                    } else {
-
-                      if (in_array($readrow['FLD_PRODUCT_ID'], $dataArray, TRUE)) {
-
-                      } else {
-
-                        $dataArray[$count] = $readrow['FLD_PRODUCT_ID'];
-                        $count++;
-                        ?>
-                        <tr class="small">
-                          <td><?php echo $readrow['FLD_PRODUCT_ID']; ?></td>
-                          <td><?php echo $readrow['FLD_PRODUCT_NAME']; ?></td>
-                          <td><?php echo $readrow['FLD_PRICE']; ?></td>
-                          <td><?php echo $readrow['FLD_BRAND']; ?></td>
-                          <td><?php echo $readrow['FLD_TYPE']; ?></td>
-                          <td><?php echo $readrow['FLD_COLOUR']; ?></td>
-                           <td><?php echo $readrow['FLD_WARRANTY']; ?></td>
-                            <td><?php echo $readrow['FLD_QUANTITY']; ?></td>
-                          <!-- <td><?php //echo $readrow['fld_product_quantity']; ?></td> -->
-                        </tr>
-                        <?php
-                      }
-                    }
-                  }
-                }
-                ?>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <?php
-
-      } else {
-
-        ?>
-        <div class="thumbnail" style="background-color:white;">
-          <div>
-            <table class="table table-striped">
-              <thead>
-                <th scope="col" style="width: 16%; text-align: center;">Product ID</th>
-                <th scope="col" style="width: 10%; text-align: center;">Name</th>
-                <th scope="col" style="width: 6%; text-align: center;">Price</th>
-                <th scope="col" style="width: 10%; text-align: center;">Brand</th>
-                <th scope="col" style="width: 10%; text-align: center;">Type</th>
-                <th scope="col" style="width: 20%; text-align: center;">Quatity</th>
-                <th scope="col" style="width: 6%; text-align: center;">Colour</th>
-                <!-- <th scope="col" style="width: 6%;">Stock</th> -->
-              </tr>
+              ?>
 
 
               <?php
-              for ($index = 0; $index < count($input_data); $index++) {
+              for ($index = 0; $index < count($input_data); $index-=-1) {
 
-                $stmt = $conn->prepare("SELECT * FROM  tbl_products_a174622_pt2 WHERE FLD_PRODUCT_NAME LIKE :first_string OR FLD_PRICE LIKE :first_string OR FLD_TYPE LIKE :first_string");
+                $stmt = $conn->prepare("SELECT * FROM  tbl_products_a174622_pt2 WHERE FLD_BRAND LIKE :first_string OR FLD_PRICE LIKE :first_string OR FLD_TYPE LIKE :first_string");
 
                 $stmt->bindParam(':first_string', $first_string, PDO::PARAM_STR);
 
@@ -150,44 +58,126 @@ try {
                 $first_string = "%$first_string%";
 
                 $stmt->execute();
-                $result = $stmt->fetchAll();
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($result as $readrow) {
-                  ?>
-                  <tr class="small">
-                    <td><?php echo $readrow['FLD_PRODUCT_ID']; ?></td>
-                    <td><?php echo $readrow['FLD_PRODUCT_NAME']; ?></td>
-                    <td><?php echo $readrow['FLD_PRICE']; ?></td>
-                    <td><?php echo $readrow['FLD_BRAND']; ?></td>
-                    <td><?php echo $readrow['FLD_TYPE']; ?></td>
-                    <td><?php echo $readrow['FLD_QUANTITY']; ?></td>
-                    <td><?php echo $readrow['FLD_COLOUR']; ?></td>
-                    <!-- <td><?php// echo $readrow['fld_product_quantity']; ?></td> -->
-                  </tr>
-                </thead>
-                <tbody>
-                <?php }
-              }
-              ?>
-            </table>
-          </div>
-        </div>
-        <?php
+                  if (empty($dataArray)) {
 
-      }
+                    $dataArray[$count] = $readrow['FLD_PRODUCT_ID'];
+                    $count++;
 
-      if ($result == "") {
-        ?>
-        <div class="px-5 mt-5">
-          <p class="text-muted  fw-normal"> No result found.</p>
-        </div>
-        <?php
-      }
-    } catch (PDOException $e) {
-      echo "Error: " . $e->getMessage();
-      // header("location:error.php");
-    }
+                    ?>
+<!--                     <div style="background: rgba(229, 33, 101,0.9); width:100px; border-radius: 30px; filter: blur(5px);"></div>
+-->                    <li class="splide__slide"  style="background: rgba(229, 33, 101,0.9); width:100px; border-radius: 30px;">
+  <img style="width: 300px;height: 300px; justify-content: center; border-radius: 30px;" src="products/<?php echo ($readrow['FLD_PRODUCT_IMAGE']); ?>" >
+  <div >
+    <h4 > <?php echo($readrow['FLD_PRODUCT_NAME']); ?></h4>
+    <h4><?php echo($readrow['FLD_BRAND']) ; ?></h4>
+    <h4><?php echo($readrow['FLD_TYPE']) ; ?></h4>
+    <a href="products_details.php?pid=<?php echo $readrow['FLD_PRODUCT_ID']; ?>" class="btn btn-warning btn-m" role="button" >Details</a>
+  </div>
+</li>
+<?php
+} else {
+
+  if (in_array($readrow['FLD_PRODUCT_ID'], $dataArray, TRUE)) {
+
+  } else {
+
+    $dataArray[$count] = $readrow['FLD_PRODUCT_ID'];
+    $count++;
+    ?>
+    <li class="splide__slide" style="background: rgba(229, 33, 101,0.9); width:100px; border-radius: 30px;">
+      <img style="width: 300px; height: 300px;  border-radius: 30px;" src="products/<?php echo ($readrow['FLD_PRODUCT_IMAGE']); ?>" >
+      <h4 style="text-align: center;"><?php echo($readrow['FLD_PRODUCT_NAME']); ?></h4>
+
+      <h4 style="text-align: center;"><?php echo($readrow['FLD_BRAND']); ?></h4>
+      <h4 style="text-align: center;"><?php echo($readrow['FLD_TYPE']); ?></h4>
+      <a href="products_details.php?pid=<?php echo $readrow['FLD_PRODUCT_ID']; ?>" class="btn btn-warning btn-s" role="button" >Details</a>
+    </li>
+
+    <?php
   }
+}
+}
+}
+?>
+
+<?php
+
+} else {
+
+  ?>
+
+  <?php
+  for ($index = 0; $index < count($input_data); $index++) {
+
+    $stmt = $conn->prepare("SELECT * FROM  tbl_products_a174622_pt2 WHERE FLD_BRAND LIKE :first_string OR FLD_PRICE LIKE :first_string OR FLD_TYPE LIKE :first_string");
+
+    $stmt->bindParam(':first_string', $first_string, PDO::PARAM_STR);
+
+    $first_string = $input_data[$index];
+    $first_string = "%$first_string%";
+
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+
+    foreach ($result as $readrow) {
+      ?>
+      <li class="splide__slide">
+        <img src="<?php echo ['FLD_PRODUCT_IMAGE']; ?>">
+        <h4><?php echo ['FLD_PRODUCT_NAME']; ?></h4>
+        <h4><?php echo['FLD_BRAND']; ?></h4>
+        <h4 ><?php echo['FLD_TYPE']; ?></h4>
+
+      </li>
+      <button type="submit" class="btn btn-default"><a href="products_details.php" style="color: black;">Search</a></button>
+    <?php }
+  }
+  ?>
+</table>
+</div>
+</div>
+<?php
+
+}
+
+if ($result == "") {
+  ?>
+  <div class="px-5 mt-5">
+    <p class="text-muted  fw-normal"> No result found.</p>
+  </div>
+  <?php
+}
+} catch (PDOException $e) {
+  echo "Error: " . $e->getMessage();
+      // header("location:error.php");
+}?>
+</ul>
+</div>
+</div>
+
+<script>
+  document.addEventListener( 'DOMContentLoaded', function () {
+    new Splide( '#card-slider', {
+      perMove: 1,
+      focus:'center',
+      autowidth:true ,
+      height:'500px',
+      type:'loop',
+      gap:20,
+      perPage    : 1,
+      autoplay :true,
+      breakpoints: {
+        600: {
+          perPage: 1,
+        }
+      }
+
+    } ).mount();
+  } );
+</script>
+<?php  }
 } catch (PDOException $e) {
   // echo "Error: " . $e->getMessage();
   header("location:error.php");

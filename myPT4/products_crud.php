@@ -32,7 +32,7 @@ function uploadPhoto($file, $id)
       return 0;
 
     // Check file size
-    if ($file["size"] > 10000000)
+    if ($file["size"] >= 10000000)
       return 1;
 
     // Allow certain file formats

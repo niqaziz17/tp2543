@@ -17,7 +17,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 </head>
-<body style="background: rgba(121,126,246,1.5);">
+<body style="background: #0d1137;">
 
   <div class="color1"></div>
   <div class="color2"></div>
@@ -37,7 +37,7 @@
      <div class="form-group">
           <label for="customerid" class="col-sm-3 control-label" style="color: white;">Order ID: </label>
           <div class="col-sm-9">
-         <input name="oid" type="text" class="form-control" id="orderid" placeholder="Order ID"  value="<?php if(isset($_GET['edit'])) echo $editrow['FLD_ORDER_ID']; else echo sprintf('OID%02d',$oid); ?>" readonly> <br />
+         <input name="oid" type="text" class="form-control" id="orderid" placeholder="Order ID"  value="<?php if(isset($_GET['edit'])) echo $editrow['FLD_ORDER_ID']; else echo sprintf('OID%0d',$oid); ?>" readonly> <br />
       </div>
         </div>
      
@@ -161,8 +161,10 @@
         <td><?php echo $orderrow['FLD_CUSTOMER_NAME'] ?></td>
         <td>
           <a href="orders_details.php?oid=<?php echo $orderrow['FLD_ORDER_ID']; ?>" class="btn btn-success btn-xs" role="button">Details</a>
+          <?php if ($_SESSION['user']['FLD_STAFF_ROLE'] == 'Admin') {?>
           <a href="orders.php?edit=<?php echo $orderrow['FLD_ORDER_ID']; ?>" class="btn btn-warning btn-xs" role="button">Edit</a>
           <a href="orders.php?delete=<?php echo $orderrow['FLD_ORDER_ID']; ?>" onclick="return confirm('Are you sure to delete?');" class ="btn btn-danger btn-xs" role="button">Delete</a>
+          <?php }?>
         </td>
       </tr>
       <?php

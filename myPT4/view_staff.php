@@ -8,7 +8,7 @@ include_once 'staffs_crud.php'
 	<title>View Staff</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body style="background: rgba(121,126,246,1.5);">
+<body style="background: #0d1137;">
 	<?php include 'nav_bar.php' ?>
 	 <div class="container-fluid">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">

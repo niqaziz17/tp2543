@@ -1,5 +1,5 @@
 <link rel="stylesheet"  href="navbar.css">
-<nav class="navbar navbar-default" style="background: #4adede; ">
+<nav class="navbar navbar-default" style="background: #e52165; ">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -18,7 +18,7 @@
         <li><a href="index.php" style="color: black;">Home</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  class="bar" style="color: black;" style="color: black;">Products <span class="caret"></span></a>
-          <ul class="dropdown-menu" style="background: #4adede">
+          <ul class="dropdown-menu" style="background: #e52165">
            <?php if ($_SESSION['user']['FLD_STAFF_ROLE'] == 'Admin') {?>
             <li><a href="products.php" style="color: black;">Create Product</a></li>
             
@@ -33,7 +33,7 @@
        </li>
        <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  class="bar" style="color: black;" style="color: black;">Customer <span class="caret"></span></a>
-        <ul class="dropdown-menu" style="background: #4adede">
+        <ul class="dropdown-menu" style="background: #e52165">
           <?php if ($_SESSION['user']['FLD_STAFF_ROLE'] == 'Admin') {?>
             <li><a href="customers.php" style="color: black;">Create Customer</a></li>
             
@@ -45,7 +45,7 @@
       </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  class="bar" style="color: black;" style="color: black;">Staff <span class="caret"></span></a>
-        <ul class="dropdown-menu" style="background: #4adede">
+        <ul class="dropdown-menu" style="background:#e52165">
         <?php if ($_SESSION['user']['FLD_STAFF_ROLE'] == 'Admin') {?>
             <li><a href="staffs.php" style="color: black;">Create Staff</a></li>
            
@@ -61,7 +61,7 @@
    <ul class="nav navbar-nav navbar-right">
     <li class="dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  class="bar" style="color: black;"><?php echo $_SESSION['user']['FLD_STAFF_NAME']." | ". $_SESSION['user']['FLD_STAFF_ROLE']; ?> <span class="caret"></span></a>
-      <ul class="dropdown-menu" style="background: #4adede">
+      <ul class="dropdown-menu" style="background: #e52165">
         <li role="separator" class="divider"></li>
         <li><a href="logout.php" style="color: black;">Logout</a></li>
       </ul>

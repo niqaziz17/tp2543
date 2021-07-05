@@ -29,7 +29,7 @@ include_once 'products_crud.php'
       }
     </style>
   </head>
-  <body  style="background: rgba(121,126,246,1.5);">
+  <body  style="background:#0d1137;">
 
    <?php include_once 'nav_bar.php'; ?>
 
@@ -38,9 +38,15 @@ include_once 'products_crud.php'
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <div class="page-header">
           <h2 style="color: white; text-align: center;">Create New Product</h2>
+          <?php
+                if (isset($_SESSION['error'])) {
+                    echo "<p class='text-danger text-center'>{$_SESSION['error']}</p>";
+                    unset($_SESSION['error']);
+                }
+                ?>
         </div>
 
-        <form action="products.php" method="post" class="form-horizontal" enctype="multipart/form-data" style="background: rgba(121,126,246,1.5); color: white;">
+        <form action="products.php" method="post" class="form-horizontal" enctype="multipart/form-data" style="background: #0d1137; color: white;">
          <div class="form-group">
           <label for="productid" class="col-sm-3 control-label">ID: </label>
           <div class="col-sm-9">
@@ -117,7 +123,7 @@ include_once 'products_crud.php'
             <div class="form-group">
               <label for="productq" class="col-sm-3 control-label">Quantity: </label>
               <div class="col-sm-9">
-                <input id="productq" name="quantity" type="number" class="form-control" placeholder="Product Quantity" value="<?php if(isset($_GET['edit'])) echo $editrow['FLD_PRODUCT_ID']; ?>" min="0" step="1" required> <br></div>
+                <input id="productq" name="quantity" type="number" class="form-control" placeholder="Product Quantity" value="<?php if(isset($_GET['edit'])) echo $editrow['FLD_QUANTITY']; ?>" min="0" step="1" required> <br></div>
               </div>
 
               <div class="input-group">
@@ -178,7 +184,7 @@ include_once 'products_crud.php'
       }
       foreach($result as $readrow) {
         ?>  
-        <tr style="background: rgba(121,126,246,1.5);"> 
+        <tr style="background: #0d1137;"> 
           <td><?php echo $readrow['FLD_PRODUCT_ID']; ?></td>
           <td><?php echo $readrow['FLD_PRODUCT_NAME']; ?></td>
           <td><?php echo $readrow['FLD_PRICE']; ?></td>

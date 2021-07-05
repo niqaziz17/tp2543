@@ -20,7 +20,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body style="background: #0d1137;">
  
 <?php include_once 'nav_bar.php'; ?>
  
@@ -76,14 +76,14 @@
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
       <div class="page-header">
-        <h2>Add a Product</h2>
+        <h2 style="color: white;">Add a Product</h2>
       </div>
       <form action="orders_details.php" method="post" class="form-horizontal" name="frmorder" id="forder">
       <div class="form-group">
-          <label for="prd" class="col-sm-3 control-label">Product</label>
+          <label for="prd" class="col-sm-3 control-label" style="color: white;">Product</label>
           <div class="col-sm-9">
             <select name="pid" class="form-control" id="prd">
-            <option value="">Please select</option>
+            <option value="" style="color: white;">Please select</option>
           <?php
           try {
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -106,7 +106,7 @@
         </div>
       </div>
       <div class="form-group">
-          <label for="qty" class="col-sm-3 control-label">Quantity</label>
+          <label for="qty" class="col-sm-3 control-label" style="color: white;">Quantity</label>
           <div class="col-sm-9">
             <input name="quantity" type="number" class="form-control" id="qty" min="1">
           </div>
@@ -114,7 +114,7 @@
       <div class="form-group">
           <div class="col-sm-offset-3 col-sm-9">
           <input name="oid" type="hidden" value="<?php echo $readrow['FLD_ORDER_ID'] ?>">
-        <button class="btn btn-default" type="submit" name="addproduct"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Product</button>
+        <button class="btn btn-default" type="submit" name="addproduct"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span > Add Product</button>
         <button class="btn btn-default" type="reset"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Clear</button>
         </div>
       </div>
@@ -124,9 +124,9 @@
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
       <div class="page-header">
-        <h2>Products in This Order</h2>
+        <h2 style="color: white;">Products in This Order</h2>
       </div>
-      <table class="table table-striped table-bordered">
+      <table class="table  table-bordered " style="color: white;">
       <tr>
         <th>Order Detail ID</th>
         <th>Product</th>

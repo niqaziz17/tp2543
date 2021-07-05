@@ -29,7 +29,7 @@ include_once 'products_crud.php'
       }
     </style>
   </head>
-  <body  style="background: rgba(121,126,246,1.5);">
+  <body  style="background: #0d1137;">
 
    <?php include_once 'nav_bar.php'; ?>
 
@@ -66,7 +66,7 @@ include_once 'products_crud.php'
       }
       foreach($result as $readrow) {
         ?>  
-        <tr style="background: rgba(121,126,246,1.5);"> 
+        <tr style="background: #0d1137;"> 
           <td><?php echo $readrow['FLD_PRODUCT_ID']; ?></td>
           <td><?php echo $readrow['FLD_PRODUCT_NAME']; ?></td>
           <td><?php echo $readrow['FLD_PRICE']; ?></td>

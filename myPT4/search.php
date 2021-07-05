@@ -21,7 +21,7 @@ include_once 'database.php';
 
     
 </head>
-<body style="background: rgba(121,126,246,1.5); text-align: center;" >
+<body style="background: #0d1137; text-align: center;" >
   <?php include_once 'nav_bar.php'; ?>
 
   <section class="container-fluid" >
@@ -40,7 +40,7 @@ include_once 'database.php';
             <div class="row">
               <div class="form-group">
                 <div class="input-group">
-                  <input type="text" class="form-control text-center" placeholder="Search Product Name Price Type" name="inputsearch" id="inputSearch" required>
+                  <input type="text" class="form-control text-center" placeholder="Search Brand Price Type" name="inputsearch" id="inputSearch" required>
                   <span class="input-group-btn">
                     <button class="btn btn-default bts" type="submit" name="search" style="">Search</button>
                   </span>

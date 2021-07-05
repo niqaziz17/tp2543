@@ -27,7 +27,7 @@ if (!isset($_SESSION['log']))
     <link rel="stylesheet"  href="index.css">
     
   </head>
-  <body  style="background:rgba(121,126,246,1.5);">
+  <body  style="background:#0d1137;">
 
     <?php include_once 'nav_bar.php'; ?>
 
@@ -38,24 +38,7 @@ if (!isset($_SESSION['log']))
             <div class="col-md-12 " id="transparent">
               <img src="bubblebath.png">
             </div>
-            <div class="col-md-12 " id="text">
-             <hr style="border-top: 1px solid transparent;"/>
-             <p class="text-muted" style="color: white; font-size: 20px">Search product by brand, type, price or all three.</p>
-
-           </div>
-           <div class="col-md-12" >
-            <form action="search.php" method="post" class="form-inline">
-              <div class="form-group">
-              </div>
-              <div class="form-group">
-                <label for="inputPassword2" class="sr-only">Eriber Faucet 500</label>
-                <input type="text" class="form-control" style="text-align: center;" placeholder="Eriber Faucet 500" required>
-              </div>
-              <button type="submit" class="btn btn-default"><a href="search.php" style="color: black;">Search</a></button>
-            </form>
-
-          </div>
-
+            
         </div>
       </div>
     </div>
